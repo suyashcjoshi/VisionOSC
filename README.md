@@ -14,12 +14,10 @@ Inspired by [PoseOSC](https://github.com/LingDong-/PoseOSC), but faster, no more
 
 Do not attempt to re-build (with projectGenerator) unless absolutely necessary, in which case follow the following steps:
 
-- File > Project Settings, Build System -> New Build System
+- Open OpenFrameworks 'projectGenerator.app' and import this project into it. Make sure there are no errors and after generation is commpleint, open in the IDE - XCode.app
+- Open Project.xcconfig file and updated 'OF_PATH' variable with the location of your OpenFrameworks installation. Also update the #include with OF_PATH beforen "/libs/openFrameworksCompiled/project/osx/CoreOF.xcconfig"
 - Left sidebar, click project name, General > Frameworks, Libraries,... Add Vision, AVKit, Foundation, AVFoundation, CoreML
-- Build Phases, Link Binary with Libraries, Change "mac catalyst" to "always"
-- Change deployment target to 11.3
 - For each file in src folder, on right sidebar, change file "Type" to Objective C++ (not extension, just in the dropdown menu)
-
 
 If you encounter `Undefined symbol: __objc_msgSend$identifier`, you might need to set `Excluded Architectures arm64`. See [this issue](https://github.com/LingDong-/VisionOSC/issues/2) for details.
 
